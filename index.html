@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#2b62f6" />
+<title>行情 · 供求大厅复刻</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app" id="app">
+
+  <header class="hdr">
+    <div class="bar1">
+      <button class="city" id="btnCity">
+        郑州<svg viewBox="0 0 24 24" width="12" height="12"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+      <label class="search">
+        <svg viewBox="0 0 24 24" width="16" height="16" class="mag"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M20 20l-3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="搜型号 / 品牌 / 颜色" autocomplete="off" />
+        <button id="btnClear" class="clr" hidden>×</button>
+      </label>
+      <button class="ic" id="btnRaw" aria-label="报价原文">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path d="M6 3h9l4 4v14H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12h7M9 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="bar2">
+      <span class="live"><i></i><span id="dateText">11.21</span> 结算价 · 今日已更新</span>
+      <button class="ghost" id="btnFilter">
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M3 6h18M6 12h12M10 18h4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        筛选
+      </button>
+    </div>
+
+    <nav class="cats" id="cats"></nav>
+  </header>
+
+  <main>
+    <aside class="brands" id="brands"></aside>
+    <section class="content">
+      <div class="toolbar">
+        <span class="cnt" id="countText">—</span>
+        <div class="seg" id="segSort">
+          <button data-sort="default" class="on">默认</button>
+          <button data-sort="asc">低价</button>
+          <button data-sort="desc">高价</button>
+        </div>
+      </div>
+      <div class="rows" id="rows"></div>
+    </section>
+  </main>
+
+  <nav class="tabbar" id="tabbar">
+    <button data-tab="home">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 10.5L12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      <i>首页</i>
+    </button>
+    <button data-tab="market" class="on">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 19V10M9.3 19V5M14.7 19v-6M20 19v-3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>
+      <i>行情</i>
+    </button>
+    <button data-tab="search" class="fab"><span>搜</span></button>
+    <button data-tab="msg">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M20 12.3c0 3.6-3.6 6.5-8 6.5-1 0-2-.14-2.9-.4L4.5 20l1.2-3.3A6.4 6.4 0 0 1 4 12.3C4 8.7 7.6 5.8 12 5.8s8 2.9 8 6.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      <i>消息</i>
+    </button>
+    <button data-tab="me">
+      <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="8.4" r="3.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5 20c0-3.3 3.1-5.6 7-5.6s7 2.3 7 5.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <i>我的</i>
+    </button>
+  </nav>
+
+  <div class="mask" id="mask" hidden></div>
+  <div class="sheet" id="sheet" hidden></div>
+  <div class="toast" id="toast"></div>
+</div>
+<script src="data/market.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
